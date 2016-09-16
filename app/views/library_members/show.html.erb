@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @library_member.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @library_member.name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @library_member.password %>
+</p>
+
+<%= link_to 'Edit', edit_library_member_path(@library_member) %> |
+<%= link_to 'Back', library_members_path %>
