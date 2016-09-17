@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= f.label :room_number %>
-    <%= f.number_field :room_number %>
+    <% if defined?(@room_number) %>
+      <%= f.number_field :room_number, :value => @room_number %>
+    <% else %>
+      <%= f.number_field :room_number %>
+        <% end %>
   </div>
 
   <div class="field">
@@ -22,12 +26,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :start %>
+    <%= f.label :"Start Time" %>
     <%= f.datetime_select :start %>
   </div>
 
   <div class="field">
-    <%= f.label :end %>
+    <%= f.label :"end time" %>
     <%= f.datetime_select :end %>
   </div>
 

@@ -14,6 +14,9 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+    if params.has_key?(:room_number)
+      @room_number = params[:room_number]
+    end
     @booking = Booking.new
   end
 
@@ -30,6 +33,8 @@ class BookingsController < ApplicationController
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
+        @temp_room = Room.find(@booking[:room_number])
+        @temp_room.update({:status => "Booked"})
       else
         format.html { render :new }
         format.json { render json: @booking.errors, status: :unprocessable_entity }

@@ -16,7 +16,7 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.room_number %></td>
+        <td><%= link_to booking.room_number, room_path(booking.room_number) %></td>
         <td><%= booking.email %></td>
         <td><%= booking.start %></td>
         <td><%= booking.end %></td>
