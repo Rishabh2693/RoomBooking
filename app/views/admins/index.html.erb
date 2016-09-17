@@ -7,7 +7,7 @@
     <tr>
       <th>Email</th>
       <th>Name</th>
-      <th>Password</th>
+      <!--<th>Password</th>-->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= admin.email %></td>
         <td><%= admin.name %></td>
-        <td><%= admin.password %></td>
+        <!--<td><%= admin.password %></td>-->
         <td><%= link_to 'Show', admin %></td>
         <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
         <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +29,4 @@
 <br>
 
 <%= link_to 'New Admin', new_admin_path %>
+<%= link_to 'Manage Rooms', rooms_path %>
