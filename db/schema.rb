@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916204811) do
 
+ActiveRecord::Schema.define(version: 20160916223552) do
   create_table "admins", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
     t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "super_admin"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -25,8 +26,12 @@ ActiveRecord::Schema.define(version: 20160916204811) do
     t.string   "email"
     t.datetime "start"
     t.datetime "end"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "room_number_id"
+    t.integer  "email_id"
+    t.index ["email_id"], name: "index_bookings_on_email_id"
+    t.index ["room_number_id"], name: "index_bookings_on_room_number_id"
   end
 
   create_table "library_members", force: :cascade do |t|
