@@ -23,6 +23,7 @@
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Book Room', new_booking_path(:room_number => room.room_number) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +32,3 @@
 <br>
 
 <%= link_to 'New Room', new_room_path %>
-<%= link_to 'Book Room', new_room_path %>

@@ -10,6 +10,16 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    if @room.status == "Booked"
+      @user_names = Booking.where("room_number = 1")
+                               # :order => "end DESC)
+      for user in @user_names
+        a= user.email
+        b=3
+          end
+
+    @temo = 234
+    end
   end
 
   # GET /rooms/new
